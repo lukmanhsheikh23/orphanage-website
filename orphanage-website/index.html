@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orphanage Home</title>
+    <link rel="stylesheet" href="D:\Project\FINAL PROJECT\orphanage-website\style.css">
+    <script>
+        function updateTime() {
+            const now = new Date();
+            let timeString;
+            try {
+                const options = { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                timeString = now.toLocaleTimeString('en-US', options);
+            } catch (e) {
+                // Fallback if timeZone is not supported
+                timeString = now.toLocaleTimeString('en-US');
+            }
+            document.getElementById('time').textContent = `Eastern Time: ${timeString}`;
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTime();
+            setInterval(updateTime, 1000);
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to Our Orphanage</h1>
+            <span id="time" style="float:right; font-size:1rem; margin-top:10px;"></span>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Providing Love and Care to Children in Need</h2>
+                <p>Join us in making a difference in the lives of orphaned children.</p>
+                <a href="donate.html" class="btn">Donate Now</a>
+            </div>
+        </section>
+        <section class="about">
+            <div class="container">
+                <h2>About Our Orphanage</h2>
+                <p>We are dedicated to providing a safe and nurturing environment for children who have lost their families. Our mission is to empower them with education, love, and support.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Our Orphanage. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
